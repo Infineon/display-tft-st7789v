@@ -110,6 +110,7 @@ GUI_TIMER_TIME GUI_X_GetTime(void)
     #else
         cy_time_t rtos_time;
         cy_rslt_t status = cy_rtos_get_time(&rtos_time);
+        CY_UNUSED_PARAMETER(status); /* CY_ASSERT only processes in DEBUG, ignores for others */
         CY_ASSERT(CY_RSLT_SUCCESS == status);
 
         time = (GUI_TIMER_TIME)rtos_time;
@@ -128,6 +129,7 @@ void GUI_X_Delay(int ms)
         }
     #else
         cy_rslt_t status = cy_rtos_delay_milliseconds((cy_time_t)ms);
+        CY_UNUSED_PARAMETER(status); /* CY_ASSERT only processes in DEBUG, ignores for others */
         CY_ASSERT(CY_RSLT_SUCCESS == status);
     #endif
 }
@@ -146,6 +148,7 @@ void GUI_X_Init(void)
     #if (GUI_OS == 0)
         cy_rslt_t status = emwin_timer_init();
         cyhal_syspm_register_callback(&emwin_timer_syspm_callback_data);
+        CY_UNUSED_PARAMETER(status); /* CY_ASSERT only processes in DEBUG, ignores for others */
         CY_ASSERT(CY_RSLT_SUCCESS == status);
     #endif
 }
@@ -161,6 +164,7 @@ void GUI_X_ExecIdle(void)
 {
     #if (GUI_OS == 1)
         cy_rslt_t status = cy_rtos_delay_milliseconds((cy_time_t)1u);
+        CY_UNUSED_PARAMETER(status); /* CY_ASSERT only processes in DEBUG, ignores for others */
         CY_ASSERT(CY_RSLT_SUCCESS == status);
     #endif
 }
@@ -201,18 +205,21 @@ void GUI_X_ErrorOut(const char *s) { GUI_USE_PARA(s); }
     void GUI_X_InitOS(void)
     {
         cy_rslt_t status = cy_rtos_init_mutex(&emwin_mutex);
+        CY_UNUSED_PARAMETER(status); /* CY_ASSERT only processes in DEBUG, ignores for others */
         CY_ASSERT(CY_RSLT_SUCCESS == status);
     }
 
     void GUI_X_Unlock(void)
     {
         cy_rslt_t status = cy_rtos_set_mutex(&emwin_mutex);
+        CY_UNUSED_PARAMETER(status); /* CY_ASSERT only processes in DEBUG, ignores for others */
         CY_ASSERT(CY_RSLT_SUCCESS == status);
     }
 
     void GUI_X_Lock(void)
     {
         cy_rslt_t status = cy_rtos_get_mutex(&emwin_mutex, CY_RTOS_NEVER_TIMEOUT);
+        CY_UNUSED_PARAMETER(status); /* CY_ASSERT only processes in DEBUG, ignores for others */
         CY_ASSERT(CY_RSLT_SUCCESS == status);
     }
 
@@ -220,6 +227,7 @@ void GUI_X_ErrorOut(const char *s) { GUI_USE_PARA(s); }
     {
         cy_thread_t current_thread;
         cy_rslt_t status =  cy_rtos_get_thread_handle(&current_thread);
+        CY_UNUSED_PARAMETER(status); /* CY_ASSERT only processes in DEBUG, ignores for others */
         CY_ASSERT(CY_RSLT_SUCCESS == status);
 
         return (U32)current_thread;

@@ -11,6 +11,9 @@ Display Controller: http://www.newhavendisplay.com/appnotes/datasheets/LCDs/ST77
 * emWin configuration code
 
 ### What Changed?
+#### v1.0.1
+* Minor updates to avoid warnings on some toolchains
+* Minor documentation updates
 #### v1.0.0
 * Initial release
 
@@ -19,10 +22,12 @@ This version of the TFT Display was validated for compatibility with the followi
 
 | Software and Tools                        | Version |
 | :---                                      | :----:  |
-| ModusToolbox Software Environment         | 2.0     |
-| GCC Compiler                              | 7.4     |
-| IAR Compiler                              | 8.32    |
+| ModusToolbox Software Environment         | 2.1     |
+| GCC Compiler                              | 9.2     |
+| IAR Compiler                              | 8.4     |
 | ARM Compiler 6                            | 6.11    |
+
+Minimum required ModusToolbox Software Environment: v2.0
 
 ### More information
 

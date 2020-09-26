@@ -23,6 +23,7 @@ COMPONENTS+=EMWIN_NOSNTS
 #include "cybsp.h"
 #include "GUI.h"
 #include "mtb_st7789v.h"
+#include "cy8ckit_028_tft_pins.h" /* This is part of the CY8CKIT-028-TFT shield library. */
 
 /* The pins above are defined by the CY8CKIT-028-TFT library. If the display is being used on different hardware the mappings will be different. */
 const mtb_st7789v_pins_t tft_pins =
