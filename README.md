@@ -4,7 +4,7 @@
 
 This library provides functions for supporting a 2.4 inch TFT LCD driven by an ST7789V controller. This is the same display as used on the CY8CKIT-028-TFT shield.
 
-Display: http://www.newhavendisplay.com/nhd24240320cfctxif-p-8176.html\n
+Display: http://www.newhavendisplay.com/nhd24240320cfctxif-p-8176.html
 Display Controller: http://www.newhavendisplay.com/appnotes/datasheets/LCDs/ST7789V.pdf
 
 ### Quick Start
